@@ -238,6 +238,9 @@ function main() {
   # Set all the variables
   dokku config:set ledokku DOKKU_SSH_HOST="${DOKKU_SSH_HOST}"
   dokku config:set ledokku JWT_SECRET="${JWT_SECRET}"
+  
+  # Disable Telemetry by default (Opt-in Privacy)
+  dokku config:set ledokku TELEMETRY_DISABLED="1"
 
   # Now it's finally time to install ledokku
   echo "=> ${YELLOW}Installing ledokku${END}"
